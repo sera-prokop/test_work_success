@@ -1,0 +1,50 @@
+mixin header(data)
+    header.header
+        .header__container.container
+            .header__calendar.top-date
+                button#prev.top-date__btn.prev-button(aria-label="Стрелка влево")
+                    i keyboard_arrow_left
+                    //-!= pugHelpers.Icon.call(locals, {iconName: 'right-arrow', className: 'top-date__svg', iconWidth: '25', iconHeight: '25'})
+                button#next.top-date__btn.next-button(aria-label="Стрелка вправо")
+                    //-!= pugHelpers.Icon.call(locals, {iconName: 'right-arrow', className: 'top-date__svg', iconWidth: '25', iconHeight: '25'})
+                    i keyboard_arrow_right
+                .top-date__title
+                    .top-date__text
+                        h3#month-name
+                        h5#todayDayName
+        .calendar-content
+            #calendar-table.calendar-cells
+                #table-header
+                    .row
+                        .col Mon
+                        .col Tue
+                        .col Wed
+                        .col Thu
+                        .col Fri
+                        .col Sat
+                        .col Sun
+                #table-body
+        .calendar-footer
+            #emptyForm.emptyForm
+                h4#emptyFormTitle No events now
+                a#changeFormButton.addEvent Add new
+            #addForm.addForm
+                h4 Add new event
+                .row
+                    .input-field.col.s6
+                        input#eventTitleInput.validate(type='text')
+                        label(for='eventTitleInput') Title
+                    .input-field.col.s6
+                        input#eventDescInput.validate(type='text')
+                        label(for='eventDescInput') Description
+                .addEventButtons
+                    a#addEventButton.waves-effect.waves-light.btn.blue.lighten-2 Add
+                    a#cancelAdd.waves-effect.waves-light.btn.grey.lighten-2 Cancel
+        #sidebar.sidebar-wrapper.z-depth-2.side-nav.fixed
+            .sidebar-title
+                h4 Events
+                h5#eventDayName Date
+            #sidebarEvents.sidebar-events
+                .empty-message Sorry, no events to selected date
+
+//TODO: без <i> ошибки в консоли
