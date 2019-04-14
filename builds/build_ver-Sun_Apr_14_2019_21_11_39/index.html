@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+    <!--TODO: без <i> ошибки в консоли-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Тестовая работа</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="telephone=no" name="format-detection">
+        <meta name="HandheldFriendly" content="true">
+
+        <!--[if (gt IE 9)|!(IE)]><!-->
+        <link href="static/css/main.min.css" rel="stylesheet" type="text/css">
+        <!--<![endif]-->
+        <meta property="og:title" content="#{data.title}">
+        <meta property="og:title" content="">
+        <meta property="og:url" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="500">
+        <meta property="og:image:height" content="300">
+        <meta property="twitter:description" content="">
+        <link rel="image_src" href="">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script>
+            (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
+        </script>
+    </head>
+
+    <body class="page">
+        <svg xmlns="http://www.w3.org/2000/svg" style="border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important;"
+        class="root-svg-symbols-element">
+            <symbol id="right-arrow" viewBox="0 0 129 129">
+                <path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" />
+            </symbol>
+        </svg>
+        <section class="page__wrapper">
+            <header class="header">
+                <div class="header__container container">
+                    <div class="header__calendar top-date">
+                        <button class="top-date__btn prev-button" id="prev" aria-label="Стрелка влево"><i>keyboard_arrow_left</i>
+                        </button>
+                        <button class="top-date__btn next-button" id="next" aria-label="Стрелка вправо"><i>keyboard_arrow_right</i>
+                        </button>
+                        <div class="top-date__title">
+                            <div class="top-date__text">
+                                <h3 id="month-name"></h3>
+                                <h5 id="todayDayName"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar-content">
+                    <div class="calendar-cells" id="calendar-table">
+                        <div id="table-header">
+                            <div class="row">
+                                <div class="col">Mon</div>
+                                <div class="col">Tue</div>
+                                <div class="col">Wed</div>
+                                <div class="col">Thu</div>
+                                <div class="col">Fri</div>
+                                <div class="col">Sat</div>
+                                <div class="col">Sun</div>
+                            </div>
+                        </div>
+                        <div id="table-body"></div>
+                    </div>
+                </div>
+                <div class="calendar-footer">
+                    <div class="emptyForm" id="emptyForm">
+                        <h4 id="emptyFormTitle">No events now</h4><a class="addEvent" id="changeFormButton">Add new</a>
+                    </div>
+                    <div class="addForm" id="addForm">
+                        <h4>Add new event</h4>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input class="validate" id="eventTitleInput" type="text">
+                                <label for="eventTitleInput">Title</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input class="validate" id="eventDescInput" type="text">
+                                <label for="eventDescInput">Description</label>
+                            </div>
+                        </div>
+                        <div class="addEventButtons"><a class="waves-effect waves-light btn blue lighten-2" id="addEventButton">Add</a><a class="waves-effect waves-light btn grey lighten-2" id="cancelAdd">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-wrapper z-depth-2 side-nav fixed" id="sidebar">
+                    <div class="sidebar-title">
+                        <h4>Events</h4>
+                        <h5 id="eventDayName">Date</h5>
+                    </div>
+                    <div class="sidebar-events" id="sidebarEvents">
+                        <div class="empty-message">Sorry, no events to selected date</div>
+                    </div>
+                </div>
+            </header>
+            <div class="page__buffer"></div>
+        </section>
+        <div class="page__footer">
+            <footer class="footer"></footer>
+        </div>
+
+
+        <script src="static/js/main.min.js"></script>
+    </body>
+
+</html>
