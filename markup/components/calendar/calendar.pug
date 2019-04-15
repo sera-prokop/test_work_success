@@ -1,0 +1,31 @@
+mixin calendar(data)
+    .calendar.container
+        .top-date
+            .top-date-text
+                h3#month-name
+                h5#today-day-name
+            button#prev.top-date-btn.prev-button(aria-label="Предыдущий месяц")
+                i
+            button#next.top-date-btn.next-button(aria-label="Следующий месяц")
+                i
+        .bottom-date
+            .search-input
+                label(for='searchInput' aria-label="search")
+                    != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'search-svg', iconWidth: '15', iconHeight: '15'})
+                input#searchInput(type="text" disabled)
+        .calendar-content
+            #calendar-table.calendar-cells
+                #table-body
+        .calendar-footer
+            button#close-footer.close-footer x
+            #add-form.add-form
+                .input-field
+                    input#eventTitleInput.add-field.validate(type='text' placeholder="Событие")
+                .input-field
+                    textarea#eventDescInput.add-field.validate(type='text' placeholder="Описание")
+                .add-event-buttons
+                    button#addEventButton.btn.add-btn Добавить
+                    button#cancelAdd.btn.cancel-btn Удалить
+        #sidebar.sidebar-wrapper.z-depth-2.side-nav.fixed
+            .sidebar-title
+
